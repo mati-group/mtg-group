@@ -6,14 +6,14 @@ import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { navLinks } from '@constants/navLinks';
 import { Logo } from './logo';
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const router = useRouter();
   const pathname = usePathname();
+  
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className='relative isolate z-10 bg-white'>

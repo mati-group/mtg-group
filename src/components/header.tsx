@@ -8,6 +8,8 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';
 import { navLinks } from '@constants/navLinks';
+import { config } from '@constants/config';
+import { Logo } from './logo';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,19 +17,7 @@ export function Header() {
   return (
     <header className='relative isolate z-10 bg-white'>
       <nav className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8' aria-label='Global'>
-        <div className='flex lg:flex-1'>
-          <Link href='/' className='-m-1.5 p-1.5'>
-            <div className='flex'>
-              <Image className='h-30 w-auto' src='/logo.jpg' alt='' width={50} height={50} />
-              <span className='flex flex-col'>
-                <span className='uppercase font-medium text-green-800' style={{ letterSpacing: '0.2rem' }}>
-                  MaTi Group
-                </span>
-                <span className='text-gray-400'>One Step..! Know, Learn, Get Hired.</span>
-              </span>
-            </div>
-          </Link>
-        </div>
+        <Logo />
         <div className='flex lg:hidden'>
           <button
             type='button'
@@ -56,10 +46,7 @@ export function Header() {
         <div className='fixed inset-0 z-10' />
         <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
           <div className='flex items-center justify-between'>
-            <Link href='/' className='-m-1.5 p-1.5'>
-              <span className='sr-only'>MaTi Group</span>
-              <Image className='h-50 w-auto' src='/logo.jpg' alt='' width={75} height={75} />
-            </Link>
+            <Logo />
             <button
               type='button'
               className='-m-2.5 rounded-md p-2.5 text-gray-700'

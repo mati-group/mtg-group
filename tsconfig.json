@@ -20,6 +20,9 @@
       }
     ],
     "paths": {
+      "@components/*": ["./src/components/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@mocks/*": ["./src/mocks/*"],
       "@/*": ["./src/*"]
     }
   },

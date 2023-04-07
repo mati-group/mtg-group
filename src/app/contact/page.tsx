@@ -1,11 +1,12 @@
 // Copyright (c) 2023 MTG Group. All rights reserved.
 
+import { Page } from '@/components/page';
 import { Heading } from '@/components/typography';
 
-export default function Page() {
+export default function Contact() {
   return (
-    <main className='mx-auto flex max-w-7xl p-6 lg:px-8'>
+    <Page>
       <Heading>Contact Page</Heading>
-    </main>
+    </Page>
   );
 }

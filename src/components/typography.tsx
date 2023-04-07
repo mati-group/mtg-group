@@ -14,3 +14,5 @@ const HeadingBase = ({ level, as: Component = `h${level}`, ...props }: { level: 
 );
 
 export const Heading = ({ level = 1, ...props }) => <HeadingBase level={level} {...props} />;
+
+export const Paragraph = ({ ...props }) => <p className='text-gray-600' {...props} />;

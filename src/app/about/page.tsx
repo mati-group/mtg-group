@@ -1,8 +1,8 @@
 // Copyright (c) 2023 MTG Group. All rights reserved.
 
-import { Page } from '@/components/page';
-import { Paragraph } from '@/components/typography';
-import { services } from '@/mocks/services';
+import { Page } from '@components/page';
+import { Paragraph } from '@components/typography';
+import { services } from '@mocks/services';
 
 export default function About() {
   return (

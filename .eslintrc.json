@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "plugins": ["header"],
+  "rules": {
+    "header/header": ["warn", "line", [" Copyright (c) 2023 MTG Group. All rights reserved."], 2]
+  }
 }

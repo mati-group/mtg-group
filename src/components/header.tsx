@@ -7,8 +7,7 @@ import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '../../public/logo.jpg';
-import { navLinks } from '@/utils/navlink';
+import { navLinks } from '@/constants/navLinks';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,7 +18,7 @@ export default function Header() {
         <div className='flex lg:flex-1'>
           <Link href='/' className='-m-1.5 p-1.5'>
             <div className='flex'>
-              <Image className='h-30 w-auto' src={logo} alt='' width={50} height={50} />
+              <Image className='h-30 w-auto' src='/logo.jpg' alt='' width={50} height={50} />
               <span className='flex flex-col'>
                 <span className='uppercase font-medium text-green-800' style={{ letterSpacing: '0.2rem' }}>
                   MaTi Group
@@ -59,7 +58,7 @@ export default function Header() {
           <div className='flex items-center justify-between'>
             <Link href='/' className='-m-1.5 p-1.5'>
               <span className='sr-only'>MaTi Group</span>
-              <Image className='h-50 w-auto' src={logo} alt='' width={75} height={75} />
+              <Image className='h-50 w-auto' src='/logo.jpg' alt='' width={75} height={75} />
             </Link>
             <button
               type='button'

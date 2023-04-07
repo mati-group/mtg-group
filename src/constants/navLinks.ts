@@ -7,11 +7,11 @@ export const navLinks = [
   },
   {
     name: 'Staffing Services',
-    path: '',
+    path: '/staffing-services',
   },
   {
     name: 'IT Services',
-    path: '',
+    path: '/it-services',
   },
   {
     name: 'Contact',

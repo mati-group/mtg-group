@@ -9,7 +9,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { navLinks } from '@constants/navLinks';
 
-export default function Header() {
+export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (

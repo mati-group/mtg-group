@@ -5,14 +5,15 @@
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 import { navLinks } from '@constants/navLinks';
-import { config } from '@constants/config';
 import { Logo } from './logo';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <header className='relative isolate z-10 bg-white'>
@@ -34,7 +35,8 @@ export function Header() {
               <Link
                 key={index}
                 href={link.path}
-                className='text-sm font-semibold leading-6 text-gray-500 hover:text-gray-950 uppercase'
+                className={`${pathname === link.path ? 'text-purple-600' : ''} hover:text-purple-600
+                text-sm font-semibold leading-6 text-gray-500 hover:text-gray-950 uppercase`}
               >
                 {link.name}
               </Link>

@@ -1,5 +1,6 @@
 // Copyright (c) 2023 MTG Group. All rights reserved.
 
+import { Footer } from '@components/footer';
 import './globals.css';
 
 import { Header } from '@components/header';
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Header />
         {children}
+        {/* <Footer/> */}
       </body>
     </html>
   );

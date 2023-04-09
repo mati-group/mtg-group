@@ -3,12 +3,12 @@
 'use client';
 
 import { useState } from 'react';
-import { Dialog } from '@headlessui/react';
+import { Dialog, Menu } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { navLinks } from '@constants/navLinks';
-import { Logo } from './logo';
+import { LogoWithTitle } from './logowtitle';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,7 +18,7 @@ export function Header() {
   return (
     <header className='relative isolate z-10 bg-white'>
       <nav className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8' aria-label='Global'>
-        <Logo />
+        <LogoWithTitle />
         <div className='flex lg:hidden'>
           <button
             type='button'
@@ -32,14 +32,29 @@ export function Header() {
         <div className='hidden lg:flex lg:gap-x-12'>
           {navLinks.map((link, index) => {
             return (
-              <Link
-                key={index}
-                href={link.path}
-                className={`${pathname === link.path ? 'text-purple-600' : ''} hover:text-purple-600
-                text-sm font-semibold leading-6 text-gray-500 hover:text-gray-950 uppercase`}
-              >
-                {link.name}
-              </Link>
+              <Menu key={index}>
+                <Menu.Button
+                  className={`${pathname === link.path ? 'text-purple-600' : ''} 
+                                         hover:text-purple-600 text-sm font-semibold 
+                                         leading-6 text-gray-500 hover:text-gray-950 
+                                         uppercase`}
+                >
+                  {link.name}
+                </Menu.Button>
+                {link.children.length > 0 && (
+                  <Menu.Items className='focus:outline-none absolute origin-top-left  w-56  divide-y divide-gray-100 rounded-md bg-white shadow-lg '>
+                    <div className='p-1'>
+                      {link.children.map((child, index) => (
+                        <Menu.Item key={index}>
+                          <button className={`w-full rounded-md p-2`} href={child.path}>
+                            {child.name}
+                          </button>
+                        </Menu.Item>
+                      ))}
+                    </div>
+                  </Menu.Items>
+                )}
+              </Menu>
             );
           })}
         </div>
@@ -48,7 +63,7 @@ export function Header() {
         <div className='fixed inset-0 z-10' />
         <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
           <div className='flex items-center justify-between'>
-            <Logo />
+            <LogoWithTitle />
             <button
               type='button'
               className='-m-2.5 rounded-md p-2.5 text-gray-700'

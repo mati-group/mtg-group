@@ -5,7 +5,7 @@
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Logo } from './logo';
+import { LogoWithTitle } from './logowtitle';
 import { NavLinks } from './nav-links';
 
 export function Header() {
@@ -14,7 +14,7 @@ export function Header() {
   return (
     <header className='relative isolate z-10 bg-green-800'>
       <nav className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8' aria-label='Global'>
-        <Logo />
+        <LogoWithTitle />
         <div className='flex lg:hidden'>
           <button
             type='button'
@@ -33,7 +33,7 @@ export function Header() {
         <div className='fixed inset-0 z-10' />
         <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
           <div className='flex items-center justify-between'>
-            <Logo />
+            <LogoWithTitle />
             <button
               type='button'
               className='-m-2.5 rounded-md p-2.5 text-gray-700'

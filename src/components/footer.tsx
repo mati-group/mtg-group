@@ -2,7 +2,7 @@
 
 export function Footer() {
   return (
-    <footer className='container mx-auto px-4'>
+    <footer className='container mx-auto px-4 relative isolate'>
       <div className='flex items-center justify-center text-sm font-thin'>
         &copy; {new Date().getFullYear()} MaTi Group. All rights reserved.
       </div>

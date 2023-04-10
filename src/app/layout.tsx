@@ -1,5 +1,6 @@
 // Copyright (c) 2023 MTG Group. All rights reserved.
 
+import { Footer } from '@components/footer';
 import './globals.css';
 
 import { Footer } from '@components/footer';

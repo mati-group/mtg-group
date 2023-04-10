@@ -6,7 +6,7 @@ export const navLinks = [
     path: '/',
   },
   {
-    name: 'About',
+    name: 'About MTG',
     path: '/about',
   },
   {
@@ -18,7 +18,7 @@ export const navLinks = [
     path: '/it-services',
   },
   {
-    name: 'Contact',
+    name: 'Contact Us',
     path: '/contact',
   },
 ];

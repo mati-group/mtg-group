@@ -5,18 +5,14 @@
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { navLinks } from '@constants/navLinks';
 import { Logo } from './logo';
+import { NavLinks } from './nav-links';
 
 export function Header() {
-  const pathname = usePathname();
-  
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className='relative isolate z-10 bg-white'>
+    <header className='relative isolate z-10 bg-green-800'>
       <nav className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8' aria-label='Global'>
         <Logo />
         <div className='flex lg:hidden'>
@@ -30,18 +26,7 @@ export function Header() {
           </button>
         </div>
         <div className='hidden lg:flex lg:gap-x-12'>
-          {navLinks.map((link, index) => {
-            return (
-              <Link
-                key={index}
-                href={link.path}
-                className={`${pathname === link.path ? 'text-purple-600' : ''} hover:text-purple-600
-                text-sm font-semibold leading-6 text-gray-500 hover:text-gray-950 uppercase`}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
+          <NavLinks />
         </div>
       </nav>
       <Dialog as='div' className='lg:hidden' open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -61,17 +46,7 @@ export function Header() {
           <div className='mt-6 flow-root'>
             <div className='-my-6 divide-y divide-gray-500/10'>
               <div className='space-y-2 py-6'>
-                {navLinks.map((link, index) => {
-                  return (
-                    <Link
-                      key={index}
-                      href={link.path}
-                      className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 uppercase'
-                    >
-                      {link.name}
-                    </Link>
-                  );
-                })}
+                <NavLinks view='mobile' />
               </div>
             </div>
           </div>
